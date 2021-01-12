@@ -1,8 +1,11 @@
 {
   "name": "@hexlet/code",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "[![Actions Status](https://github.com/Semeikin-Kirill/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Semeikin-Kirill/frontend-project-lvl1/actions)",
+  "bin": {
+    "brain-games": "bin/brain-games.js"
+  },
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/Semeikin-Kirill/frontend-project-lvl1.git"
   },
-  "author": "",
+  "author": "Kirill Semeykin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Semeikin-Kirill/frontend-project-lvl1/issues"
