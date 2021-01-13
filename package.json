@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "[![Actions Status](https://github.com/Semeikin-Kirill/frontend-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/Semeikin-Kirill/frontend-project-lvl1/actions)",
   "bin": {
     "brain-games": "bin/brain-games.js"
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Semeikin-Kirill/frontend-project-lvl1#readme",
   "dependencies": {
-    "make": "^0.8.1"
+    "make": "^0.8.1",
+    "readline-sync": "^1.4.10"
   }
 }
