@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import parityQuestions from '../src/parityCheck.js';
+import gameArchitecture from '../src/index.js';
+import { yesOrNo, evenQuestion, taskToEven } from '../src/game/even.js';
 
-console.log('Welcome to the Brain Games!');
-parityQuestions();
+gameArchitecture(evenQuestion, yesOrNo, taskToEven);

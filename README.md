@@ -4,3 +4,5 @@
 [![Actions Status](https://github.com/Semeikin-Kirill/frontend-project-lvl1/workflows/linter/badge.svg)](https://github.com/Semeikin-Kirill/frontend-project-lvl1/actions)
 
 [![asciicast](https://asciinema.org/a/385963.svg)](https://asciinema.org/a/385963)
+
+[![asciicast](https://asciinema.org/a/386677.svg)](https://asciinema.org/a/386677)
