@@ -11,6 +11,8 @@ $ make install
 
 ### 1 brain-even.
 
+Answer if the number is even or not.
+
 ### Game launch
 
 ```sh
@@ -21,6 +23,8 @@ $ brain-even
 
 ### 2 brain-calc.
 
+Answer what is the result of the expression.
+
 ### Game launch
 
 ```sh
@@ -29,6 +33,8 @@ $ brain-calc
 [![asciicast](https://asciinema.org/a/386677.svg)](https://asciinema.org/a/386677)
 
 ### 3 brain-gcd.
+
+Find Greatest Common Divisor of Numbers.
 
 ### Game launch
 
@@ -40,6 +46,8 @@ $ brain-gcd
 
 ### 4 brain-progression.
 
+Specify missing number in progressions.
+
 ### Game launch
 
 ```sh
@@ -49,6 +57,8 @@ $ brain-progression
 [![asciicast](https://asciinema.org/a/387083.svg)](https://asciinema.org/a/387083)
 
 ### 5 brain-prime.
+
+Answer "yes" if given number is prime. Otherwise answer "no".
 
 ### Game launch
 
