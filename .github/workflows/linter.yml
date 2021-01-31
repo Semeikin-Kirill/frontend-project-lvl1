@@ -10,5 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm install
+	with:
+	  node-version: '13'
+      - run: make install
+      - run: node -v
       - run: make lint

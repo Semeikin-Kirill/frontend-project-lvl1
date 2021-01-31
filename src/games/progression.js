@@ -1,21 +1,22 @@
-import { getRandomArbitrary } from '../index.js';
+import getRandomNumber from '../utility.js';
+import createGame from '../index.js';
 
-export const taskToProgression = () => 'What number is missing in the progression?';
+const taskToProgression = () => 'What number is missing in the progression?';
 
-export const progressionQuestion = () => {
-  const run = getRandomArbitrary(5, 10);
-  let firstNumber = getRandomArbitrary(1, 100);
-  const secondNumber = getRandomArbitrary(0, 20);
+const progressionQuestion = () => {
+  const run = getRandomNumber(5, 10);
+  let firstNumber = getRandomNumber(1, 100);
+  const secondNumber = getRandomNumber(0, 20);
   const result = [];
   for (let i = 0; run >= i; i += 1) {
     result.push(firstNumber);
     firstNumber += secondNumber;
   }
-  result.splice(getRandomArbitrary(1, result.length - 1), 1, '..');
+  result.splice(getRandomNumber(1, result.length - 1), 1, '..');
   return result.join(' ');
 };
 
-export const progressionAnswer = (str) => {
+const progressionAnswer = (str) => {
   let a;
   let b;
   const masif = str.split(' ');
@@ -35,3 +36,5 @@ export const progressionAnswer = (str) => {
   const result = Number(masif[i - 1]) + num;
   return String(result);
 };
+
+export default () => createGame(progressionQuestion, progressionAnswer, taskToProgression);

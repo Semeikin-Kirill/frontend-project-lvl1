@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import { taskToCalc, calcQuestion, calcAnswer } from '../src/game/calc.js';
-import gameArchitecture from '../src/index.js';
+import startGame from '../src/games/calc.js';
 
-gameArchitecture(calcQuestion, calcAnswer, taskToCalc);
+startGame();
