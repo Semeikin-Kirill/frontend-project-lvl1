@@ -18,9 +18,10 @@ const createGame = (game, answer, condition) => {
       console.log(
         `'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`,
       );
-      return `Let's try again, ${name}!`;
+      console.log(`Let's try again, ${name}!`);
+      return;
     }
   }
-  return `Congratulations, ${name}!`;
+  console.log(`Congratulations, ${name}!`);
 };
 export default createGame;
