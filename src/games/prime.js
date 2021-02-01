@@ -1,12 +1,9 @@
 import getRandomNumber from '../utility.js';
 import createGame from '../index.js';
 
-const taskToPrime = () => 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const phrase = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
-const questionPrime = () => getRandomNumber(1, 500);
-
-const yesOrNo = (str) => {
-  const number = Number(str);
+const reply = (number) => {
   for (let i = 2; number / 2 > i; i += 1) {
     if (number % i === 0) {
       return 'no';
@@ -14,5 +11,10 @@ const yesOrNo = (str) => {
   }
   return 'yes';
 };
+const isPrime = () => {
+  const question = getRandomNumber(1, 500);
+  const answer = `${reply(question)}`;
+  return { question, answer };
+};
 
-export default () => createGame(questionPrime, yesOrNo, taskToPrime);
+export default () => createGame(isPrime, phrase);

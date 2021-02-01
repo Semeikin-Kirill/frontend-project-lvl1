@@ -1,9 +1,9 @@
 import getRandomNumber from '../utility.js';
 import createGame from '../index.js';
 
-const taskToProgression = () => 'What number is missing in the progression?';
+const phrase = 'What number is missing in the progression?';
 
-const progressionQuestion = () => {
+const createProgression = () => {
   const run = getRandomNumber(5, 10);
   let firstNumber = getRandomNumber(1, 100);
   const secondNumber = getRandomNumber(0, 20);
@@ -12,29 +12,15 @@ const progressionQuestion = () => {
     result.push(firstNumber);
     firstNumber += secondNumber;
   }
-  result.splice(getRandomNumber(1, result.length - 1), 1, '..');
-  return result.join(' ');
+  return result;
 };
 
-const progressionAnswer = (str) => {
-  let a;
-  let b;
-  const masif = str.split(' ');
-  if (masif[0] !== '..' && masif[1] !== '..') {
-    a = Number(masif[1]);
-    b = Number(masif[0]);
-  } else {
-    const run = masif.length;
-    a = Number(masif[run - 1]);
-    b = Number(masif[run - 2]);
-  }
-  const num = a - b;
-  let i = 0;
-  while (masif[i] !== '..') {
-    i += 1;
-  }
-  const result = Number(masif[i - 1]) + num;
-  return String(result);
+const isProgression = () => {
+  const numbers = createProgression();
+  const index = getRandomNumber(0, numbers.length - 1);
+  const answer = `${numbers.splice(index, 1, '..')}`;
+  const question = numbers.join(' ');
+  return { question, answer };
 };
 
-export default () => createGame(progressionQuestion, progressionAnswer, taskToProgression);
+export default () => createGame(isProgression, phrase);
