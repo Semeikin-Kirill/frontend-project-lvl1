@@ -3,26 +3,32 @@ import createGame from '../index.js';
 
 const operators = ['+', '-', '*'];
 
-const phrase = 'What is the result of the expression?';
+const description = 'What is the result of the expression?';
 
-const isCalc = () => {
+const operations = (num1, num2, operator) => {
+  let result;
+  switch (operator) {
+    case '+':
+      result = `${num1 + num2}`;
+      break;
+    case '-':
+      result = `${num1 - num2}`;
+      break;
+    case '*':
+      result = `${num1 * num2}`;
+      break;
+    // no default
+  }
+  return result;
+};
+
+const gameCalc = () => {
   const number1 = getRandomNumber(1, 1000);
   const number2 = getRandomNumber(1, 1000);
   const operator = operators[getRandomNumber(0, operators.length)];
   const question = `${number1} ${operator} ${number2}`;
-  let answer;
-  switch (operator) {
-    case '+':
-      answer = `${number1 + number2}`;
-      break;
-    case '-':
-      answer = `${number1 - number2}`;
-      break;
-    default:
-      answer = `${number1 * number2}`;
-      break;
-  }
+  const answer = String(operations(number1, number2, operator));
   return { question, answer };
 };
 
-export default () => createGame(isCalc, phrase);
+export default () => createGame(gameCalc, description);

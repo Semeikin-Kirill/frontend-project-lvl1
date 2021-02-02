@@ -1,26 +1,28 @@
 import getRandomNumber from '../utility.js';
 import createGame from '../index.js';
 
-const phrase = 'What number is missing in the progression?';
+const description = 'What number is missing in the progression?';
 
-const createProgression = () => {
-  const run = getRandomNumber(5, 10);
-  let firstNumber = getRandomNumber(1, 100);
-  const secondNumber = getRandomNumber(0, 20);
+const createProgression = (long, number, difference) => {
+  let num = number;
   const result = [];
-  for (let i = 0; run >= i; i += 1) {
-    result.push(firstNumber);
-    firstNumber += secondNumber;
+  for (let i = 0; long > i; i += 1) {
+    result.push(num);
+    num += difference;
   }
   return result;
 };
 
-const isProgression = () => {
-  const numbers = createProgression();
+const gameProgression = () => {
+  const long = getRandomNumber(5, 10);
+  const number = getRandomNumber(1, 100);
+  const defference = getRandomNumber(1, 20);
+  const numbers = createProgression(long, number, defference);
   const index = getRandomNumber(0, numbers.length - 1);
-  const answer = `${numbers.splice(index, 1, '..')}`;
+  const answer = String(numbers[index]);
+  numbers[index] = '..';
   const question = numbers.join(' ');
   return { question, answer };
 };
 
-export default () => createGame(isProgression, phrase);
+export default () => createGame(gameProgression, description);
