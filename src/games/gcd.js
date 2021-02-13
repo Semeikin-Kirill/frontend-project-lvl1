@@ -3,20 +3,14 @@ import createGame from '../index.js';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const findGcd = (a, b) => {
-  if (b > 0) {
-    const c = a % b;
-    return findGcd(b, c);
-  }
-  return a;
-};
+const gcd = (a, b) => (b > 0 ? gcd(b, a % b) : a);
 
-const gameGcd = () => {
+const generateRound = () => {
   const number1 = getRandomNumber(1, 1000);
   const number2 = getRandomNumber(1, 1000);
   const question = `${number1} ${number2}`;
-  const answer = String(findGcd(number1, number2));
+  const answer = String(gcd(number1, number2));
   return { question, answer };
 };
 
-export default () => createGame(gameGcd, description);
+export default () => createGame(generateRound, description);

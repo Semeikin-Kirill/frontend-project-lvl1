@@ -3,26 +3,24 @@ import createGame from '../index.js';
 
 const description = 'What number is missing in the progression?';
 
-const createProgression = (long, number, difference) => {
-  let num = number;
+const createProgression = (length, first, step) => {
   const result = [];
-  for (let i = 0; long > i; i += 1) {
-    result.push(num);
-    num += difference;
+  for (let i = 0; length > i; i += 1) {
+    result.push(first + i * step);
   }
   return result;
 };
 
-const gameProgression = () => {
-  const long = getRandomNumber(5, 10);
-  const number = getRandomNumber(1, 100);
-  const defference = getRandomNumber(1, 20);
-  const numbers = createProgression(long, number, defference);
-  const index = getRandomNumber(0, numbers.length - 1);
-  const answer = String(numbers[index]);
-  numbers[index] = '..';
-  const question = numbers.join(' ');
+const generateRound = () => {
+  const length = getRandomNumber(5, 10);
+  const first = getRandomNumber(1, 100);
+  const step = getRandomNumber(1, 20);
+  const progression = createProgression(length, first, step);
+  const index = getRandomNumber(0, progression.length - 1);
+  const answer = String(progression[index]);
+  progression[index] = '..';
+  const question = progression.join(' ');
   return { question, answer };
 };
 
-export default () => createGame(gameProgression, description);
+export default () => createGame(generateRound, description);
