@@ -6,7 +6,7 @@ const createGame = (getGameData, description) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
-  console.log(`${description}`);
+  console.log(description);
   for (let i = 0; i < roundsCount; i += 1) {
     const { question, answer } = getGameData();
     console.log(`Question: ${question}`);
